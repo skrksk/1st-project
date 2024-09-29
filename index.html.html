@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('d:/project/bg1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        /* Container for the lamp image */
+        .lamp-container {
+            background-color: rgba(0, 0, 0, 0.8); /* Blackish background with slight transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow for lifted effect */
+        }
+
+        #lamp {
+            width: 100%;
+            max-width: 250px; /* Limit the maximum width of the lamp */
+            transition: opacity 0.3s;
+        }
+
+        .off {
+            opacity: 0.3;
+        }
+
+        .on {
+            opacity: 1;
+        }
+
+        .toggle-button {
+            padding: 12px;
+            border-radius: 25%;
+            color: black;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 4px;
+            transition: background-color 0.3s;
+            text-align: center;
+            width: 150px;
+        }
+
+        #on-button {
+            background-color: rgb(32, 211, 32);
+        }
+
+        #off-button {
+            background-color: crimson;
+        }
+    </style>
+    <title>Lamp Toggle</title>
+</head>
+<body>
+    <div class="lamp-container">
+        <img id="lamp" src="d:/project/lamp.jpg" class="off" alt="lamp">
+    </div>
+    <br>
+    <button id="on-button" class="toggle-button" onclick="turnOnLamp()">Turn On</button>
+    <button id="off-button" class="toggle-button" onclick="turnOffLamp()">Turn Off</button>
+
+    <script>
+        function turnOnLamp() {
+            const lamp = document.getElementById('lamp');
+            lamp.classList.remove('off');
+            lamp.classList.add('on');
+        }
+
+        function turnOffLamp() {
+            const lamp = document.getElementById('lamp');
+            lamp.classList.remove('on');
+            lamp.classList.add('off');
+        }
+    </script>
+</body>
+</html>
